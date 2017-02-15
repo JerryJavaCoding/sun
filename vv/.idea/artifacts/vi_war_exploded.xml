@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="vi:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/vi_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="vi/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="vi" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-5.1.301" />
+          <element id="library" level="project" name="mchange-commons-java-0.2.101" />
+          <element id="library" level="project" name="log4j-1.2.171" />
+          <element id="library" level="project" name="jfinal-3.0-bin-with-src1" />
+          <element id="library" level="project" name="c3p0-0.9.5.11" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.30" />
+          <element id="library" level="project" name="mchange-commons-java-0.2.10" />
+          <element id="library" level="project" name="jfinal-3.0-bin" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
