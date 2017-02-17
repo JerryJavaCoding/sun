@@ -56,7 +56,7 @@ public class UserController extends Controller {
         List userList = User.dao.find("select * from user");
         setAttr("userList",userList);
         System.out.println("查询成功");
-        renderJson("userlist",userList);
+//        renderJson("userlist",userList);
         render("list.jsp");
 }
 }

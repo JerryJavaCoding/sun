@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>数据列表</title>
@@ -22,7 +23,8 @@
       <td>邮箱</td>
       <td>密码</td>
     </tr>
-    <#list userList as user>
+    <c:forEach var="user" items="${requestScope.userList}">
+
     <tr>
       <td style="text-align:left;">${user.Id}</td>
       <td style="text-align:left;">${user.name}</td>
@@ -32,6 +34,7 @@
       <td style="text-align:left;">${user.email}</td>
       <td style="text-align:left;">${user.pwd}</td>
     </tr>
+      </c:forEach>
     </#list>
     </tbody>
   </table>
