@@ -12,9 +12,10 @@ public class UserController extends Controller {
     public void gotoregister(){
         render("register.jsp");
     }
-    public void gotologin(){
-        render("login.jsp");
-    }
+    public void gotologin(){render("login.jsp");}
+    public void gotoupdate(){render("update.jsp");}
+    public void gotodelete(){render("delete.jsp");}
+    public void gotoselect(){render("select_middle.jsp");}
     public void dologin(){
         String name = getPara("username");
         String password = getPara("password");
@@ -39,4 +40,23 @@ public class UserController extends Controller {
         System.out.println("注册成功");
         gotologin();
     }
+
+    public void doupdate(){
+        User user = getModel(User.class);
+        user.update();
+        System.out.println("修改成功");
+        gotologin();
+    }
+    public void dodelete(){
+        User.dao.deleteById(getParaToInt("user.Id"));
+        System.out.println("删除成功");
+        gotologin();
+    }
+    public void dolist() {
+        List userList = User.dao.find("select * from user");
+        setAttr("userList",userList);
+        System.out.println("查询成功");
+        renderJson("userlist",userList);
+        render("list.jsp");
+}
 }

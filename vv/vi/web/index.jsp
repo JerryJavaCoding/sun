@@ -12,7 +12,7 @@
 </head>
 <body>
 <%
-  response.sendRedirect("/user/goToLogin");
+  response.sendRedirect("/user/gotologin");
 %>
 </body>
 </html>

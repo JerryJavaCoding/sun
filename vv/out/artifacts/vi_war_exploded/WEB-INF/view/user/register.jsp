@@ -1,5 +1,5 @@
 <%--
-  Created by IntelliJ IDEA.
+  Created by xue.
   User: Administrator
   Date: 2017/2/14
   Time: 15:50
@@ -9,9 +9,9 @@
 <form action="/user/doregister" method="post">
   <input name="user.name" type="text" placeholder="请输入用户名"/>
   <br><br>
-  <input name="user.tel" type="text" placeholder="请输入密码"/>
+  <input name="user.tel" type="text" placeholder="请输入联系方式"/>
   <br><br>
-  <input name="user.pwd" type="text" placeholder="请输入联系方式"/>
+  <input name="user.pwd" type="text" placeholder="请输入密码"/>
   <br><br>
   <input type="submit">提交</input>
 </form>

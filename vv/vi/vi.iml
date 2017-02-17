@@ -32,5 +32,6 @@
     <orderEntry type="library" name="mchange-commons-java-0.2.101" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.301" level="project" />
     <orderEntry type="library" name="servlet-api1" level="project" />
+    <orderEntry type="library" name="freemarker" level="project" />
   </component>
 </module>

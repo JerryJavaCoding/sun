@@ -14,5 +14,8 @@
   <button type="submit">提交</button>
 </form>
 <a href="gotoregister">注册</a>
+<a href="gotoupdate">修改</a>
+<a href="gotodelete">注销</a>
+<a href="gotoselect">查询</a>
 
 
