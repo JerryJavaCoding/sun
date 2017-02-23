@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="admin_module:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/admin_module_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="admin_module/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="admin_module" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="c3p0-0.9.5.1" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.30" />
+          <element id="library" level="project" name="mchange-commons-java-0.2.10" />
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="jfinal-3.0-bin-with-src" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
