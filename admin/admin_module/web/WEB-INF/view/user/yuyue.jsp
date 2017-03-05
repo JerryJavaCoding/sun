@@ -45,11 +45,10 @@
   <script type="text/javascript">
     function doctorid(x) {
       //获取select的选项
-      debugger;
       var sel = document.getElementById("doctorList");
       //controller中两个不同类型的医生
-      var doctorList1 ="${requestScope.doctors}";
-      var doctorList2 = "${requestScope.doctor}";
+      var doctorList1 =${requestScope.doctor1};
+      var doctorList2 = ${requestScope.doctor2};
       //var doctorList1 = [{office:病诊, dage:34, dsex:女, wage:5, dtel:18873646578, dpwd:123456, dname:胡安华, dId:2}];
       //var doctorList2 = [{office:美容, dage:26, dsex:男, wage:1, dtel:87909284, dpwd:556677, dname:林立, dId:1}];
       //select选中的医生
@@ -64,7 +63,7 @@
       //将数据遍历添加进去
       console.log(realList);
       for (var i = 0; i < realList.length; i++) {
-        sel.options.add(new Option(realList[i].dname, realList[i].dname));
+        sel.options.add(new Option(realList[i].attrs.dname, realList[i].attrs.dname));
       }
 
     }

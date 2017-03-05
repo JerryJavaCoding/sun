@@ -1,6 +1,8 @@
 package com.controller;
 
+import com.google.gson.Gson;
 import com.jfinal.core.Controller;
+import com.jfinal.json.Json;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
 import com.model.*;
@@ -21,11 +23,12 @@ public class UserController extends Controller {
     }
     public void domyyu(){
         List users = User.dao.find("SELECT * FROM user WHERE Id = "+getParaToInt()+"");
-        setAttr("users",users);
+        setAttr("users", users);
         List<Record> yuyues = Db.find("select user.name,yuyue.oId,user.tel,yuyue.uid,yuyue.lei,yuyue.bing,\n" +
                 "yuyue.deal,pet.PId,pet.tname,yuyue.time,yuyue.ordertime,doctor.dname,yuyue.did \n" +
                 "from yuyue,user,pet,doctor where yuyue.uid=user.Id and yuyue.pid=pet.PId \n" +
                 "and yuyue.did=doctor.dId and deal='否'and user.Id= " + getParaToInt() + "");
+
         setAttr("yuyues", yuyues);
         System.out.println("查询成功");
         render("order.jsp");
@@ -42,10 +45,13 @@ public class UserController extends Controller {
         render("deal.jsp");
     }
     public void douseryu(){
+        Gson gson=new Gson();
         List doctors = Doctor.dao.find("SELECT * FROM doctor WHERE office = '病诊'");
-        setAttr("doctors",doctors);
+        final String doctorList1 = gson.toJson(doctors);
+        setAttr("doctor1",doctorList1);
         List doctor = Doctor.dao.find("SELECT * FROM doctor WHERE office = '美容'");
-        setAttr("doctor",doctor);
+        final String doctorList2 = gson.toJson(doctor);
+        setAttr("doctor2",doctorList2);
         List users = User.dao.find("SELECT * FROM user WHERE Id = "+getParaToInt()+"");
         setAttr("users",users);
         List userfind = User.dao.find("SELECT user.Id,user.name,pet.PId,pet.tname" +
